@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  dbpostgresql:
+    image: postgres:16.0
+    container_name: dbpostgresql
+    environment:
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=app_db
+    ports:
+      - "55432:5432"
+
+  ## First time initialization ONLY!
+  dbpostgresql_init:
+   image: postgres:16.0
+   container_name: dbpostgresql_init
+   command: pg_restore -h dbpostgresql --no-owner --no-privileges -d app_db -U appuser app_dump
+   volumes:
+     - ./imdb_pg11:/app_dump
+   environment:
+     - POSTGRES_USER=appuser
+     - POSTGRES_PASSWORD=admin
+     - PGPASSWORD=admin
+     - POSTGRES_DB=app_db
+   depends_on:
+     dbpostgresql:
+       condition: service_started
