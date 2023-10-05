@@ -47,6 +47,6 @@ http http://localhost:8080/movies/cursor
 
 ## Conclusion
 
-Seems that `100_000` is nice choice.
+According to the fit graph, sweet spot is somewhere between `10^4` and `10^5`.
 
-⚠️ Of course, it really all depends on traffic, usage, real data etc. This is a guestimate ⚠️
+⚠️ This is 5-min guessed conclusion. The answer depends on traffic, usage, real data etc. ⚠️
