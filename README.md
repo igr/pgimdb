@@ -7,7 +7,7 @@
 
 ## Setup
 
-+ Download "PostgreSQL Dump of IMDB Data" dfrom https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2QYZBT
++ Download "PostgreSQL Dump of IMDB Data" from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2QYZBT
 + Run docker compose
 
 ## Test
